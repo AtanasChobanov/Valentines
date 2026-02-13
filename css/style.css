@@ -1,0 +1,280 @@
+/* ==========================================
+   Valentine's SPA - Soft Pink Theme
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap');
+
+:root {
+  /* Requested Palette: Rose, Soft Pink, White */
+  --color-bg: #fff0f5; /* Lavender Blush */
+  --color-primary: #ffb7c5; /* Cherry Blossom Pink */
+  --color-secondary: #ff69b4; /* Hot Pink */
+  --color-accent: #ff1493; /* Deep Pink */
+  --color-white: #ffffff;
+  --color-text: #5e3a46; /* Soft Brown Text */
+  
+  /* Fonts */
+  --font-heading: 'Great Vibes', cursive;
+  --font-body: 'Montserrat', sans-serif;
+  
+  /* Transitions */
+  --transition: 0.4s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   SPA Structure
+   ========================================== */
+.overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(255, 240, 245, 0.98);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s;
+}
+
+.overlay-content {
+  text-align: center;
+}
+
+.page {
+  display: none; /* Hidden by default */
+  min-height: 100vh;
+  padding: 0 2rem;
+  animation: fadeIn 0.8s ease;
+}
+
+.page.active {
+  display: block; /* Show active page */
+}
+
+/* ==========================================
+   Components
+   ========================================== */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.centered {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(255,182,193, 0.4);
+}
+
+.card {
+  background: var(--color-white);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Buttons */
+.btn {
+  background: var(--color-primary);
+  color: var(--color-text);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.4);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+
+/* Music Control */
+.music-control {
+  position: fixed;
+  top: 20px; right: 20px;
+  background: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  width: 50px; height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.music-control:hover { transform: scale(1.1); }
+
+/* ==========================================
+   Refined Design Styles
+   ========================================== */
+
+/* Striped Border for Landing Card */
+.card.letter-theme {
+  text-align: left; /* Text aligned left as requested */
+  /* Striped Border Effect */
+  background-image: linear-gradient(#fff, #fff), 
+                    repeating-linear-gradient(45deg, #ffb7c5 0, #ffb7c5 15px, #ffffff 15px, #ffffff 30px);
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  border: 12px solid transparent;
+  
+  /* Ensure title and button are centered */
+  display: flex;
+  flex-direction: column;
+}
+
+.card.letter-theme h1, 
+.card.letter-theme button {
+  align-self: center; /* Center these specific elements */
+  text-align: center;
+}
+
+/* Back Button Styling */
+.back-link-btn {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-text);
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.back-link-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Horizontal Letters Layout */
+.envelope-container {
+  display: flex;
+  flex-direction: row; /* Horizontal by default */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .envelope-container {
+    flex-wrap: nowrap; /* Force single row on large screens */
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .card { padding: 1.5rem; }
+  p { font-size: 0.8rem !important; line-height: 1.5; }
+  #tired-instruction { font-size: 1rem !important; }
+  .btn { padding: 0.8rem 1.5rem; font-size: 1rem; }
+  .centered { min-height: 100vh; padding-top: 0; }
+}
+
+.envelope {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 280px; /* Slightly wider */
+  flex: 0 0 auto; /* Don't shrink */
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border: 1px solid var(--color-primary);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.envelope:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: #fffafa;
+  box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2);
+}
+
+/* Animations - Restored */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeIn 1s ease forwards; }
+
+/* Canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* Success Container */
+.success-container { display: none; }
+
+/* Photo Container (Constrain user images) */
+.photo-container {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.photo-container img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px; /* Prevent it from being too tall on huge screens */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.audio-player audio {
+  max-width: 100%;
+}
