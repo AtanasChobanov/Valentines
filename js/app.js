@@ -199,7 +199,7 @@ function startConfetti() {
       y: Math.random() * canvas.height - canvas.height,
       size: Math.random() * 15 + 6, // Larger particles
       color: colors[Math.floor(Math.random() * colors.length)],
-      speed: Math.random() * 3 + 2,
+      speed: Math.random() * 2 + 1.5, // Slower
       tilt: Math.random() * 10,
       tiltAngle: Math.random(),
       tiltAngleInc: Math.random() * 0.05 + 0.05,
