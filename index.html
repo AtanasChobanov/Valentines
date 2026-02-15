@@ -11,22 +11,6 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Click to Enter Overlay -->
-  <div id="enter-overlay" class="overlay">
-    <div class="overlay-content">
-      <h1>За Теб... ❤️</h1>
-      <button id="enter-btn" class="btn btn-large">Влез</button>
-    </div>
-  </div>
-
-  <!-- Background Music Control -->
-  <button id="music-control" class="music-control" aria-label="Изключи музиката">
-    🔊
-  </button>
-  
-  <!-- Canvas for confetti (Smile Page) -->
-  <canvas id="confetti-canvas"></canvas>
-
   <!-- Main Content Wrapper -->
   <div class="page-wrapper">
     
@@ -58,117 +42,13 @@
               Искрено се надявам да се видим съвсем скоро. ❤️
             </p>
           </div>
-          <button onclick="navigateTo('letters')" class="btn btn-large" style="margin-top: 2rem;">
+          <a href="letters.html" class="btn btn-large" style="margin-top: 2rem; display: inline-block; text-decoration: none; color: white; text-align: center;">
             Отвори когато... 💌
-          </button>
+          </a>
         </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: LETTERS OVERVIEW -->
-    <section id="letters" class="page hidden">
-      <div class="container centered">
-        <h1 class="fade-in">Избери подарък 💌</h1>
-        <p class="fade-in" style="font-size: 1.1rem; margin-bottom: 2rem;">
-          Тези са за теб. Отвори ги, когато имаш нужда...
-        </p>
-        
-        <div class="envelope-container">
-          <!-- Envelope 1 -->
-          <div onclick="navigateTo('miss-me')" class="envelope scale-in">
-            <h3>Отвори, когато ти липсвам</h3>
-            <p>За моментите, когато се чувстваш самотна.</p>
-          </div>
-          
-          <!-- Envelope 2 -->
-          <div onclick="navigateTo('tired')" class="envelope scale-in" style="animation-delay: 0.1s;">
-            <h3>Отвори, когато си уморена</h3>
-            <p>За дните, когато се нуждаеш от подкрепа.</p>
-          </div>
-          
-          <!-- Envelope 3 -->
-          <div onclick="navigateTo('smile')" class="envelope scale-in" style="animation-delay: 0.2s;">
-            <h3>Отвори, когато искаш да се усмихнеш</h3>
-            <p>За моментите, когато искаш да се разсмееш.</p>
-          </div>
-        </div>
-        
-        <button onclick="navigateTo('landing')" class="back-link-btn">
-          ← Обратно
-        </button>
-      </div>
-    </section>
-
-    <!-- SECTION 3: MISS ME -->
-    <section id="miss-me" class="page hidden">
-      <div class="container centered">
-        <h1 class="fade-in">Когато ти липсвам 💕</h1>
-        
-        <div class="card scale-in">
-          <div class="photo-container">
-            <img src="assets/images/photo.jpg" alt="Снимка на мен👀">
-          </div>
-          
-          <div class="audio-player">
-            <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--color-rose);">
-              🎤 Послание за теб:
-            </p>
-            <audio controls>
-              <source src="assets/audio/voice-message.m4a" type="audio/mpeg">
-              Твоят браузър не поддържа аудио елемента.
-            </audio>
-          </div>
-        </div>
-        <button onclick="navigateTo('letters')" class="back-link-btn">← Обратно към подаръците</button>
-      </div>
-    </section>
-
-    <!-- SECTION 4: TIRED -->
-    <section id="tired" class="page hidden">
-      <div class="container centered">
-        <h1 class="fade-in">Когато си уморена и имаш нужда от увереност 💪</h1>
-        
-        <div class="card scale-in">
-          <p id="tired-instruction" style="font-size: 1.1rem; margin-bottom: 2rem; min-height: 4rem; display: flex; align-items: center; justify-content: center; font-weight: 500;">
-            Натисни бутона за увереност.
-          </p>
-          
-          <button id="reassurance-btn" class="btn btn-large" style="font-size: 14px;">
-            Имам нужда от увереност 💕
-          </button>
-        </div>
-        <button onclick="navigateTo('letters')" class="back-link-btn">← Обратно към подаръците</button>
-      </div>
-    </section>
-
-    <!-- SECTION 5: SMILE -->
-    <section id="smile" class="page hidden">
-      <div class="container centered">        
-        <div id="question-container" class="fade-in">
-          <h1>Обичаш ли ме? 💕</h1>
-          <div class="button-container">
-            <button id="yes-btn" class="btn btn-yes">Да ❤️</button>
-            <button id="no-btn" class="btn btn-no">Не</button>
-          </div>
-        </div>
-        
-        <div id="success-container" class="success-container">
-          <h1 class="success-text">И аз те обичам ❤️</h1>
-          <div class="photo-container" style="max-width: 300px; margin: 0 auto;">
-            <div class="tenor-gif-embed" data-postid="10448418106835623316" data-share-method="host" data-aspect-ratio="0.561224" data-width="100%">
-              <a href="https://tenor.com/view/small-dancing-white-cat-dance-funny-gif-10448418106835623316">Small Dancing White Cat Dance Funny Sticker</a>
-              from <a href="https://tenor.com/search/small+dancing+white+cat-stickers">Small Dancing White Cat Stickers</a>
-            </div> 
-            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-          </div>
-        </div>
-        <button onclick="navigateTo('letters')" class="back-link-btn">← Обратно към подаръците</button>
       </div>
     </section>
 
   </div>
-  
-  <!-- Single JS File for SPA Logic -->
-  <script src="js/app.js"></script>
 </body>
 </html>
